@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.comparison__title {
+  text-align: center;
+}
+
+.comparison__table {
+  margin-top: rem(32);
+  @include mq("md") {
+    margin-top: rem(50);
+  }
+}

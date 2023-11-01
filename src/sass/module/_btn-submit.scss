@@ -1,0 +1,44 @@
+@use "global" as *;
+
+
+input[type=submit] {
+  cursor: pointer;
+  color: $white;
+}
+
+.btn-submit {
+  position: relative;
+  display: inline-block;
+  padding: 1em 2em;
+  line-height: 1;
+  background-color: $blue;
+  text-decoration: none;
+  border-radius: rem(35); /* 角丸設定 */
+  transition: .3s opacity;
+  }
+
+  .btn-submit:hover{
+  opacity: .7;
+  }
+
+  
+  .btn-submit::before,
+  .btn-submit::after {
+    content: ""; /* 疑似要素に指定必須 */
+    width: 20px; /* 線の長さを指定 */
+    height: 3px; /* 線の幅を指定 */
+    display: inline-block; /* インラインブロックにする */
+    border-radius: 2px; /* 線を角丸にする */
+    background: $white;   /* 線の色を指定 */
+    position: absolute; /* 相対位置に指定 */
+    right: 10px; /* 右から10pxの位置に配置 */
+  }
+  
+  .btn-submit::before {
+    top: calc(50% - 8px);     /* 数値は微調整してください */
+    transform: rotate(45deg); /* 45度回転させる */
+  }
+  .btn-submit::after {
+    bottom: calc(50% - 8px);   /* 数値は微調整してください */
+    transform: rotate(-45deg); /* -45度回転させる */
+  }

@@ -1,0 +1,71 @@
+@use "global" as *;
+
+table , td, th {
+	border: 1px solid $indigo;
+	border-collapse: collapse;
+}
+td, th {
+	padding: 3px;
+	width: 30px;
+	height: 25px;
+}
+// th {
+// 	background: #f0e6cc;
+// }
+// .even {
+// 	background: #fbf8f0;
+// }
+// .odd {
+// 	background: #fefcf9;
+// }
+.comparison-table {
+  font-size: rem(14);
+  color: #5C5C5C;
+  max-width: rem(996);
+  width: 100%;
+  border: 2px solid $indigo;
+  text-align: center;
+}
+
+.comparison-table__back {
+  color: $white;
+  background: $indigo;
+  font-size: rem(13);
+  border-bottom: 1px solid $white;
+  width: 8%;
+  // min-height: rem(84);
+  // height: 100%;
+  height: rem(84);
+  text-align: left;
+  padding: 0 rem(13);
+}
+
+th.comparison-table__back1 {
+  color: $white;
+  background: $blue;
+  font-weight: $bold;
+  padding: rem(14) 0;
+  width: 22.9%;
+}
+
+th.comparison-table__back2  {
+  font-size: rem(15);
+  background: #E5E5E5;
+  font-weight: $normal;
+  padding: rem(14) 0;
+  width: 22.9%;
+}
+
+.comparison-table__back3 {
+  color: $pink;
+  background: $back-yellow;
+  font-size: rem(15);
+  font-weight: $bold;
+  line-height: calc(19 / 15);
+  letter-spacing: .019em;
+  text-align: center;
+}
+
+.comparison-table__horizontal th {
+  height: rem(46);
+}

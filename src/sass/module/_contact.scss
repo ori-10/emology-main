@@ -1,0 +1,89 @@
+@use "global" as *;
+
+.contact {
+  background: $back-blue;
+  padding: 0 0 rem(50);
+  @include mq("md") {
+    padding: 0 0 rem(73);
+    background: $white;
+  }
+}
+
+.contact__title {
+  max-width: rem(858);
+}
+
+.contact__title {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.contact__title p {
+  background: $blue;
+  display: block;
+  color: $white;
+  font-size: rem(14);
+  padding-top: rem(17);
+  padding-bottom: 2px;
+  background-image: linear-gradient(to right, $white 8px, transparent 8px);
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+.contact__title h2 {
+  position: relative;
+  display: inline-block;
+  color: $yellow;
+  font-size: rem(19);
+  padding-bottom: 2px;
+  background-image: linear-gradient(to right, $white 8px, transparent 8px);
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  z-index: 1;
+}
+
+.contact__title h2::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 460px;
+  height: 70px;
+  border-radius: 50% / 0 0 100% 100%;
+  background: $blue;
+}
+
+.contact__text {
+  margin-top: rem(12);
+  text-align: center;
+}
+
+.contact__text p {
+  font-size: rem(13);
+  font-family: $second-font-family;
+  font-style: italic;
+  color: $blue;
+}
+
+.contact__body {
+  margin-top: rem(12);
+  @include mq("md") {
+    margin-top: rem(75);
+  }
+}
+
+.contact__body {
+  border-radius: rem(6);
+  background: $white;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  padding: rem(15) rem(15) rem(56);
+  @include mq("md") {
+    padding: rem(36) rem(76) rem(76);
+  }
+}
