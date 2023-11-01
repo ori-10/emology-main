@@ -328,15 +328,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 ***************************************************************/
 .form__foot-text {
   margin-top: rem(13);
-  @include mq("md") {
-    margin-top: rem(20);
-  }
-}
-
-.form__foot-text p {
   font-size: rem(12);
   color: #5e544e;
   line-height: calc(20 / 12);
+  display: block;
+  @include mq("md") {
+    margin-top: rem(20);
+  }
 }
 
 /* 送信ボタン

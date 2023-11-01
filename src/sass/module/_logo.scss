@@ -1,9 +1,9 @@
 @use "global" as *;
 
 .logo {
-  max-width: rem(117.359);
+  max-width: rem(118);
   display: inline-block;
   @include mq("md") {
-    max-width: rem(170);
+    max-width: rem(173);
   }
 }

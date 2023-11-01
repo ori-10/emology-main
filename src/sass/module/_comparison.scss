@@ -5,8 +5,9 @@
 }
 
 .comparison__table {
-  margin-top: rem(32);
+  margin-top: rem(45);
+  overflow-x: scroll;
   @include mq("md") {
-    margin-top: rem(50);
+    margin-top: rem(68);
   }
 }

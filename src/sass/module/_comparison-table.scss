@@ -3,48 +3,38 @@
 table , td, th {
 	border: 1px solid $indigo;
 	border-collapse: collapse;
+  padding: rem(5);
 }
-td, th {
-	padding: 3px;
-	width: 30px;
-	height: 25px;
+
+.comparison-table td, th {
+	height: rem(85);
 }
-// th {
-// 	background: #f0e6cc;
-// }
-// .even {
-// 	background: #fbf8f0;
-// }
-// .odd {
-// 	background: #fefcf9;
-// }
+
 .comparison-table {
   font-size: rem(14);
   color: #5C5C5C;
-  max-width: rem(996);
+  min-width: rem(996);
   width: 100%;
   border: 2px solid $indigo;
   text-align: center;
+  line-height: calc(19 / 15);
+  letter-spacing: .019em;
 }
 
 .comparison-table__back {
+  width: 8%;
+  padding-left: rem(13);
+  text-align: left;
   color: $white;
   background: $indigo;
   font-size: rem(13);
   border-bottom: 1px solid $white;
-  width: 8%;
-  // min-height: rem(84);
-  // height: 100%;
-  height: rem(84);
-  text-align: left;
-  padding: 0 rem(13);
 }
 
 th.comparison-table__back1 {
   color: $white;
   background: $blue;
   font-weight: $bold;
-  padding: rem(14) 0;
   width: 22.9%;
 }
 
@@ -52,7 +42,6 @@ th.comparison-table__back2  {
   font-size: rem(15);
   background: #E5E5E5;
   font-weight: $normal;
-  padding: rem(14) 0;
   width: 22.9%;
 }
 
@@ -61,8 +50,6 @@ th.comparison-table__back2  {
   background: $back-yellow;
   font-size: rem(15);
   font-weight: $bold;
-  line-height: calc(19 / 15);
-  letter-spacing: .019em;
   text-align: center;
 }
 
