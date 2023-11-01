@@ -2,16 +2,16 @@
 
 .btn {
   border-radius: rem(25);
-border: 1px solid $blue;
-background: $white;
-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25);
-width: 100%;
-max-width: rem(130);
-color: $blue;
-padding: rem(15) 0;
-transition: opacity .4s;
+  border: 1px solid $blue;
+  background: $white;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: rem(130);
+  color: $blue;
+  padding: rem(15) 0;
+  transition: opacity 0.4s;
 }
 
 .btn:hover {
-  opacity: .7;
+  opacity: 0.7;
 }

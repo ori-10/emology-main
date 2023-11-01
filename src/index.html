@@ -145,17 +145,19 @@
           </div>
 
           <div class="contact__body">
-            <div class="contact__info">
-              <p class="contact__completion-text">
-                簡単<em>60</em> 秒で入力完了!
+            <div  class="contact__completion-text">
+              <p>
+                簡単<em>60</em>秒で入力完了!
               </p>
-              <p class="contact__required-text">※は必須項目です</p>
+            </div>
+            <div class="contact__required-text">
+              <p><span class="form-required">※</span>は必須項目です</p>
             </div>
 
             <div class="contact__form">
               <form class="form" method="post">
                 <dl>
-                  <dt>法人or個人<span class="form__required">※</span></dt>
+                  <dt>法人or個人<span class="form-required">※</span></dt>
                   <dd class="">
                     <label
                       ><input
@@ -177,11 +179,11 @@
                 <dl>
                   <dt>法人名</dt>
                   <dd>
-                    <input type="text" name="company" value="" />
+                    <input type="text" name="company" value="" placeholder="株式会社〇〇〇〇〇" />
                   </dd>
                 </dl>
                 <dl>
-                  <dt>業種<span class="form__required">※</span></dt>
+                  <dt>業種<span class="form-required">※</span></dt>
                   <dd class="">
                     <select name="hoge" class="">
                       <option value="">業種を選択</option>
@@ -190,29 +192,32 @@
                     </select>
                   </dd>
                 </dl>
-                <dl>
-                  <dt>名前<span class="form__required">※</span></dt>
-                  <dd>
-                    <input type="text" name="company" value="" />
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>ふりがな<span class="form__required">※</span></dt>
-                  <dd>
-                    <input type="text" name="company" value="" />
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>郵便番号<span class="form__required">※</span></dt>
-                  <dd>
-                    <input type="text" name="company" value="" />
-                  </dd>
-                </dl>
+                <div class="form__name">
 
+                  <dl>
+                    <dt>お名前<span class="form-required">※</span></dt>
+                    <dd>
+                      <input type="text" name="company" value="" placeholder="鈴木 太郎" />
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>ふりがな<span class="form-required">※</span></dt>
+                    <dd>
+                      <input type="text" name="company" value="" placeholder="すずき たろう"/>
+                    </dd>
+                  </dl>
+                </div>
+                <dl class="form__post-code">
+                  <dt>郵便番号<span class="form-required">※</span></dt>
+                  <dd>
+                    <input type="text" name="company" value="" placeholder="123-4567"/>
                 <button class="btn" type="button">郵便番号で検索</button>
+                  </dd>
+                </dl>
+
 
                 <dl>
-                  <dt>都道府県<span class="form__required">※</span></dt>
+                  <dt>都道府県<span class="form-required">※</span></dt>
                   <dd class="">
                     <select name="hoge" class="">
                       <option value="">都道府県を選択</option>
@@ -224,13 +229,13 @@
                 </dl>
 
                 <dl>
-                  <dt>住所<span class="form__required">※</span></dt>
+                  <dt>住所<span class="form-required">※</span></dt>
                   <dd>
-                    <input type="text" name="company" value="" />
+                    <input type="text" name="company" value="" placeholder="〇〇区〇〇町0-00-00"/>
                   </dd>
                 </dl>
 
-                <dl>
+                <dl class="form__info-session">
                   <dt class="">説明会希望</dt>
                   <dd class="">
                     <label
@@ -238,7 +243,6 @@
                         type="checkbox"
                         name="online"
                         value="オンライン面談"
-                        checked
                       /><span>オンライン面談</span></label
                     >
                     <label
@@ -246,7 +250,6 @@
                         type="checkbox"
                         name="face_to_face"
                         value="対面個別面談"
-                        checked
                       /><span>対面個別面談</span></label
                     >
                     <label
@@ -254,15 +257,26 @@
                       type="checkbox"
                       name="none"
                       value="希望しない"
-                      checked
                     /><span>希望しない</span></label
                   >
                   </dd>
                 </dl>
 
+                <div class="form__foot-text">
                 <p>貴社の状況をお伺いさせていただき、ご希望に合わせて詳しい内容の説明を30分~1時間程度でいたします。</p>
+                </div>
 
-                <div>
+                <div class="form__submit-btn">
+                <div class="btn-submit">
+                  <input
+                    type="submit"
+                    value="内容を確認して送信"
+                    class="submitbtn"
+                  />
+                </div>
+                </div>
+
+                <div class="form__mail">
                     <label
                       ><input
                         type="checkbox"
@@ -273,13 +287,6 @@
                     >
                 </div>
 
-                <div class="btn-submit">
-                  <input
-                    type="submit"
-                    value="内容を確認して送信"
-                    class="submitbtn"
-                  />
-                </div>
               </form>
             </div>
           </div>

@@ -73,10 +73,41 @@
 
 .contact__body {
   margin-top: rem(12);
+  font-family: $second-font-family;
+  font-style: italic;
   @include mq("md") {
     margin-top: rem(75);
   }
 }
+
+
+.contact__completion-text {
+  text-align: center;
+}
+
+.contact__completion-text p {
+  position: relative;
+  display: inline-block;
+  padding: 1em 2em;
+  line-height: 1;
+  color: $white;
+  background-color: $pink;
+  border-radius: rem(35);
+  font-size: rem(15);
+  }
+
+.contact__completion-text em {
+  font-size: rem(20);
+}
+
+.contact__required-text {
+  text-align-last: right;
+  margin-top: rem(30);
+  @include mq("md") {
+    margin-top: rem(10);
+  }
+}
+
 
 .contact__body {
   border-radius: rem(6);
