@@ -1,9 +1,9 @@
 @use "global" as *;
 
 .form-required {
-font-size: rem(12);
-color: $pink;
-@include mq("md") {
-  font-size: rem(15);
-}
+  font-size: rem(12);
+  color: $pink;
+  @include mq("md") {
+    font-size: rem(15);
+  }
 }

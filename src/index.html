@@ -29,9 +29,10 @@
       href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&family=Noto+Sans+JP:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/scroll-hint@latest/css/scroll-hint.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script><script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
     <script defer src="./assets/js/script.js"></script>
   </head>
   <body>
@@ -56,11 +57,11 @@
       <!-- 比較表 -->
       <!-- ############################################ -->
       <section id="comparison" class="comparison section-comparison">
-        <div class="comparison__inner inner">
+        <div class="comparison__inner inner load-fade">
           <div class="comparison__title">
             <h2 class="section-title">他社FCとの比較</h2>
           </div>
-          <div class="comparison__table">
+          <div class="comparison__table js-table">
             <table class="comparison-table">
               <tbody>
                 <tr class="comparison-table__horizontal">
@@ -134,7 +135,7 @@
       <!-- ############################################ -->
       <section id="contact" class="contact section-contact">
         <div class="contact__inner inner">
-          <div class="contact__title-block">
+          <div class="contact__title-block fadeup">
             <div class="contact__title">
               <div>
               <p>開業資金・収益実績の詳細について知りたい方は、</p>
@@ -168,14 +169,14 @@
                         type="radio"
                         name="target"
                         value="ラジオボタン"
-                        checked
+                        checked required
                       /><span>法人</span></label
                     >
                     <label
                       ><input
                         type="radio"
                         name="target"
-                        value="ラジオボタン2"
+                        value="ラジオボタン2" required
                       /><span>個人</span></label
                     >
                   </dd>
@@ -194,7 +195,7 @@
                 <dl>
                   <dt>業種<span class="form-required">※</span></dt>
                   <dd class="form__select">
-                    <select name="hoge" class="">
+                    <select name="hoge" class="" required>
                       <option value="">業種を選択</option>
                       <option value="セレクト1">セレクト1</option>
                       <option value="セレクト2">セレクト2</option>
@@ -209,7 +210,7 @@
                         type="text"
                         name="company"
                         value=""
-                        placeholder="鈴木 太郎"
+                        placeholder="鈴木 太郎" required
                       />
                     </dd>
                   </dl>
@@ -220,7 +221,7 @@
                         type="text"
                         name="company"
                         value=""
-                        placeholder="すずき たろう"
+                        placeholder="すずき たろう" required
                       />
                     </dd>
                   </dl>
@@ -232,7 +233,7 @@
                       type="text"
                       name="company"
                       value=""
-                      placeholder="123-4567"
+                      placeholder="123-4567" required
                     />
                     <button class="btn" type="button">郵便番号で検索</button>
                   </dd>
@@ -241,7 +242,7 @@
                 <dl>
                   <dt>都道府県<span class="form-required">※</span></dt>
                   <dd class="form__select">
-                    <select name="hoge" class="">
+                    <select name="hoge" class="" required>
                       <option value="">都道府県を選択</option>
                       <option value="東京都">東京都</option>
                       <option value="千葉県">千葉県</option>
@@ -257,7 +258,7 @@
                       type="text"
                       name="company"
                       value=""
-                      placeholder="〇〇区〇〇町0-00-00"
+                      placeholder="〇〇区〇〇町0-00-00" required
                     />
                   </dd>
                 </dl>
@@ -269,21 +270,21 @@
                       ><input
                         type="checkbox"
                         name="online"
-                        value="オンライン面談"
+                        value="オンライン面談" required
                       /><span>オンライン面談</span></label
                     >
                     <label
                       ><input
                         type="checkbox"
                         name="face_to_face"
-                        value="対面個別面談"
+                        value="対面個別面談" required
                       /><span>対面個別面談</span></label
                     >
                     <label
                       ><input
                         type="checkbox"
                         name="none"
-                        value="希望しない"
+                        value="希望しない" required
                       /><span>希望しない</span></label
                     >
                     <span class="form__foot-text"

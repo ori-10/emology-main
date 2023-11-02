@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.fadeup {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s;
+}
+
+.fadeup.show {
+  opacity: 1;
+  transform: translateY(0);
+}

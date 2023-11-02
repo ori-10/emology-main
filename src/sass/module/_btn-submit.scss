@@ -41,10 +41,6 @@ input[type="submit"] {
   background: $white; /* 線の色を指定 */
   position: absolute; /* 相対位置に指定 */
   right: rem(23); /* 右から10pxの位置に配置 */
-
-  height: 11px;
-  right: 23px;
-  width: 3px;
   @include mq("md") {
     right: 15%;
   }

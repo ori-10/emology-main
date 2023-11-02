@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.load-fade {
+  opacity: 0;
+  transform: translateY(rem(50));
+  transition: all 0.5s;
+}
+.load-fade.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
