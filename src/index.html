@@ -52,7 +52,6 @@
       </div>
     </header>
     <main>
-
       <!-- ############################################ -->
       <!-- 比較表 -->
       <!-- ############################################ -->
@@ -72,7 +71,7 @@
                   <th class="comparison-table__back2">介護事業FC</th>
                 </tr>
                 <tr>
-                  <th class="comparison-table__back">
+                  <th class="comparison-table__back comparison-table__sticky">
                     学習<br />
                     システム
                   </th>
@@ -85,7 +84,7 @@
                   <td>-</td>
                 </tr>
                 <tr>
-                  <th class="comparison-table__back">固定費</th>
+                  <th class="comparison-table__back comparison-table__sticky">固定費</th>
                   <td class="comparison-table__back3">
                     ロイヤリティや人件費が<br />
                     不要なため安い
@@ -99,14 +98,14 @@
                   <td>高い</td>
                 </tr>
                 <tr>
-                  <th class="comparison-table__back">粗利率</th>
+                  <th class="comparison-table__back comparison-table__sticky">粗利率</th>
                   <td class="comparison-table__back3">70~75%</td>
                   <td>30~35%</td>
                   <td>25~30%</td>
                   <td>10~15%</td>
                 </tr>
                 <tr>
-                  <th class="comparison-table__back">ポイント</th>
+                  <th class="comparison-table__back comparison-table__sticky">ポイント</th>
                   <td class="comparison-table__back3">
                     塾未経験でも1人で60名<br />
                     規模の塾経営が可能
@@ -115,8 +114,10 @@
                     塾によっては<br />
                     集客難易度が高い本部も
                   </td>
-                  <td>ロイヤリティが高い場合が<br />
-                    多い</td>
+                  <td>
+                    ロイヤリティが高い場合が<br />
+                    多い
+                  </td>
                   <td>
                     開業資金が高いため<br />
                     独立にリスクがかなりつく
@@ -133,9 +134,13 @@
       <!-- ############################################ -->
       <section id="contact" class="contact section-contact">
         <div class="contact__inner inner">
-          <div class="contact__title">
-            <p>開業資金・収益実績の詳細について知りたい方は</p>
-            <h2>いますぐ無料資料ダウンロード!</h2>
+          <div class="contact__title-block">
+            <div class="contact__title">
+              <div>
+              <p>開業資金・収益実績の詳細について知りたい方は、</p>
+              </div>
+              <h2>いますぐ無料資料ダウンロード!</h2>
+            </div>
           </div>
 
           <div class="contact__text u-mobile">
@@ -146,10 +151,8 @@
           </div>
 
           <div class="contact__body">
-            <div  class="contact__completion-text">
-              <p>
-                簡単<em>60</em>秒で入力完了!
-              </p>
+            <div class="contact__completion-text">
+              <p>簡単<em>60</em>秒で入力完了!</p>
             </div>
             <div class="contact__required-text">
               <p><span class="form-required">※</span>は必須項目です</p>
@@ -157,9 +160,9 @@
 
             <div class="contact__form">
               <form class="form" method="post">
-                <dl>
+                <dl class="form__radio">
                   <dt>法人or個人<span class="form-required">※</span></dt>
-                  <dd class="">
+                  <dd>
                     <label
                       ><input
                         type="radio"
@@ -180,12 +183,17 @@
                 <dl>
                   <dt>法人名</dt>
                   <dd>
-                    <input type="text" name="company" value="" placeholder="株式会社〇〇〇〇〇" />
+                    <input
+                      type="text"
+                      name="company"
+                      value=""
+                      placeholder="株式会社〇〇〇〇〇"
+                    />
                   </dd>
                 </dl>
                 <dl>
                   <dt>業種<span class="form-required">※</span></dt>
-                  <dd class="">
+                  <dd class="form__select">
                     <select name="hoge" class="">
                       <option value="">業種を選択</option>
                       <option value="セレクト1">セレクト1</option>
@@ -194,32 +202,45 @@
                   </dd>
                 </dl>
                 <div class="form__name">
-
                   <dl>
                     <dt>お名前<span class="form-required">※</span></dt>
                     <dd>
-                      <input type="text" name="company" value="" placeholder="鈴木 太郎" />
+                      <input
+                        type="text"
+                        name="company"
+                        value=""
+                        placeholder="鈴木 太郎"
+                      />
                     </dd>
                   </dl>
                   <dl>
                     <dt>ふりがな<span class="form-required">※</span></dt>
                     <dd>
-                      <input type="text" name="company" value="" placeholder="すずき たろう"/>
+                      <input
+                        type="text"
+                        name="company"
+                        value=""
+                        placeholder="すずき たろう"
+                      />
                     </dd>
                   </dl>
                 </div>
                 <dl class="form__post-code">
                   <dt>郵便番号<span class="form-required">※</span></dt>
                   <dd>
-                    <input type="text" name="company" value="" placeholder="123-4567"/>
-                <button class="btn" type="button">郵便番号で検索</button>
+                    <input
+                      type="text"
+                      name="company"
+                      value=""
+                      placeholder="123-4567"
+                    />
+                    <button class="btn" type="button">郵便番号で検索</button>
                   </dd>
                 </dl>
 
-
                 <dl>
                   <dt>都道府県<span class="form-required">※</span></dt>
-                  <dd class="">
+                  <dd class="form__select">
                     <select name="hoge" class="">
                       <option value="">都道府県を選択</option>
                       <option value="東京都">東京都</option>
@@ -232,12 +253,17 @@
                 <dl>
                   <dt>住所<span class="form-required">※</span></dt>
                   <dd>
-                    <input type="text" name="company" value="" placeholder="〇〇区〇〇町0-00-00"/>
+                    <input
+                      type="text"
+                      name="company"
+                      value=""
+                      placeholder="〇〇区〇〇町0-00-00"
+                    />
                   </dd>
                 </dl>
 
                 <dl class="form__info-session">
-                  <dt class="">説明会希望</dt>
+                  <dt class="">説明会希望<span class="form-required">※</span></dt>
                   <dd class="">
                     <label
                       ><input
@@ -254,37 +280,40 @@
                       /><span>対面個別面談</span></label
                     >
                     <label
-                    ><input
-                      type="checkbox"
-                      name="none"
-                      value="希望しない"
-                    /><span>希望しない</span></label
-                  >
-                  <span class="form__foot-text">貴社の状況をお伺いさせていただき、ご希望に合わせて詳しい内容の説明を30分~1時間程度でいたします。</span>
+                      ><input
+                        type="checkbox"
+                        name="none"
+                        value="希望しない"
+                      /><span>希望しない</span></label
+                    >
+                    <span class="form__foot-text"
+                      >貴社の状況をお伺いさせていただき、<br class="u-desktop">
+                      ご希望に合わせて詳しい内容の説明を30分~1時間程度でいたします。</span>
                   </dd>
                 </dl>
 
                 <div class="form__submit-btn">
-                <div class="btn-submit">
-                  <input
-                    type="submit"
-                    value="内容を確認して送信"
-                    class="submitbtn"
-                  />
-                </div>
+                  <div class="btn-submit">
+                    <input
+                      type="submit"
+                      value="内容を確認して送信"
+                      class="submitbtn"
+                    />
+                  </div>
                 </div>
 
                 <div class="form__mail">
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="mail"
-                        value="メルマガ希望"
-                        checked
-                      /><span>フランチャイズサロンからのメルマガを希望する</span></label
-                    >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="mail"
+                      value="メルマガ希望"
+                      checked
+                    /><span
+                      >フランチャイズサロンからのメルマガを希望する</span
+                    ></label
+                  >
                 </div>
-
               </form>
             </div>
           </div>

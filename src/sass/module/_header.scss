@@ -31,4 +31,7 @@ height: rem(50);
 .header__text span {
   margin-left: rem(-5);
   letter-spacing: -0.031em;
+  @include mq("md") {
+    margin-left: rem(-7);
+  }
 }

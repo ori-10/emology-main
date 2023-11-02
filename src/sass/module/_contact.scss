@@ -9,59 +9,137 @@
   }
 }
 
-.contact__title {
-  max-width: rem(858);
+.contact__inner.inner {
+  max-width: rem(908);
 }
 
-.contact__title {
+.contact__title-block {
+  position: relative;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   width: 100vw;
   overflow-x: hidden;
+  height: rem(124);
+  @include mq("md") {
+    height: inherit;
+  }
+}
+
+.contact__title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: rem(858);
+  height: rem(71);
+  width: 100%;
+  @include mq("md") {
+    max-width: rem(1655);
+    height: rem(172);
+    position: relative;
+  }
+}
+
+.contact__title div {
+  background-color: $blue;
+  max-width: rem(375);
+  width: 100%;
   text-align: center;
+  @include mq("md") {
+    max-width: initial;
+    background-color: transparent;
+  }
 }
 
 .contact__title p {
-  background: $blue;
-  display: block;
+  display: inline-block;
+  font-weight: $normal;
   color: $white;
   font-size: rem(14);
-  padding-top: rem(17);
-  padding-bottom: 2px;
-  background-image: linear-gradient(to right, $white 8px, transparent 8px);
-  background-size: 10px 1px;
-  background-repeat: repeat-x;
+  padding-bottom: rem(4);
+  padding-top: rem(18);
+  // 点線
+  background-image: linear-gradient(to right, #fff 3px, transparent 3px);
   background-position: left bottom;
+  background-repeat: repeat-x;
+  background-size: 8px 1.5px;
+
+  @include mq("md") {
+    position: relative;
+    font-size: rem(25);
+    padding-top: rem(22);
+    padding-bottom: rem(5);
+    // 点線
+    background-image: linear-gradient(to right, #fff 8px, transparent 4px);
+    background-size: 14px 2px;
+    background-color: transparent;
+  }
 }
 
 .contact__title h2 {
+  font-weight: $normal;
   position: relative;
   display: inline-block;
   color: $yellow;
   font-size: rem(19);
-  padding-bottom: 2px;
-  background-image: linear-gradient(to right, $white 8px, transparent 8px);
-  background-size: 10px 1px;
-  background-repeat: repeat-x;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  // 点線
+  background-image: linear-gradient(to right, #fff 3px, transparent 3px);
   background-position: left bottom;
-  z-index: 1;
+  background-repeat: repeat-x;
+  background-size: 8px 1.5px;
+  // z-index: 1;
+  @include mq("md") {
+    font-size: rem(36);
+    background-image: linear-gradient(to right, #fff 8px, transparent 4px);
+    background-size: 14px 2px;
+    letter-spacing: -1px;
+    padding-top: 6px;
+    padding-bottom: 2px;
+  }
 }
 
+/* 半円　擬似要素
+***************************************************************/
 .contact__title h2::after {
   position: absolute;
   content: "";
-  top: 50%;
-  left: 0;
-  transform: translate(0, -50%);
+  top: 0;
+  // left: 0;
+  // transform: translate(0, -50%);
+
+  left: 50%;
+  transform: translateX(-50%);
   width: 460px;
   height: 70px;
   border-radius: 50% / 0 0 100% 100%;
   background: $blue;
+  z-index: -1;
+  @include mq("md") {
+    content: none;
+  }
+}
+
+// pc
+.contact__title::before {
+  @include mq("md") {
+    position: absolute;
+    content: "";
+    width: rem(1515);
+    height: rem(172);
+    border-radius: 50% / 0 0 100% 100%;
+    background: $blue;
+  }
 }
 
 .contact__text {
-  margin-top: rem(12);
   text-align: center;
+  @include mq("md") {
+    margin-top: rem(12);
+  }
 }
 
 .contact__text p {
@@ -80,34 +158,49 @@
   }
 }
 
-
 .contact__completion-text {
   text-align: center;
 }
 
 .contact__completion-text p {
+  max-width: rem(193);
+  width: 100%;
   position: relative;
   display: inline-block;
-  padding: 1em 2em;
-  line-height: 1;
+  padding: rem(6);
+  line-height: 1.2;
   color: $white;
   background-color: $pink;
   border-radius: rem(35);
   font-size: rem(15);
+  @include mq("md") {
+    font-size: rem(18);
+    max-width: rem(223);
   }
+}
 
 .contact__completion-text em {
   font-size: rem(20);
+  @include mq("md") {
+    font-size: rem(24);
+  }
 }
 
 .contact__required-text {
   text-align-last: right;
-  margin-top: rem(30);
+  margin-top: rem(18);
   @include mq("md") {
-    margin-top: rem(10);
+    margin-top: rem(2);
   }
 }
 
+.contact__required-text p {
+  font-size: rem(12);
+@include mq("md") {
+  font-size: rem(14);
+  padding-right: rem(7);
+}
+}
 
 .contact__body {
   border-radius: rem(6);

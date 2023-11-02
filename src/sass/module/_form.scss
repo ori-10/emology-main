@@ -6,7 +6,7 @@
 }
 
 /*デフォルト色の指定*/
-$border-cr-default: #aaaaaa; //デフォルト時のボーダーの色
+$border-cr-default: #393939; //デフォルト時のボーダーの色
 $border-cr: #391e88; //inputのhover or focus時の色
 $back-cr: #f3f3f3; //input（テキスト系）の背景色
 
@@ -33,7 +33,7 @@ $radio-border-cr: #000; //外枠の色
 $radio-size-inner: rem(12); //チェックマーク幅高さ
 $radio-bg-cr-inner: #2da5ca; //チェックマークの背景色
 $radio-space: rem(10); //チェックマークと文字の距離
-$radio-space-betweenRadio: rem(35); //ラジオボタンの間の距離
+$radio-space-betweenRadio: rem(75); //ラジオボタンの間の距離
 
 /*チェックボックスの指定*/
 $check-fz: rem(14); //フォントサイズ
@@ -80,31 +80,6 @@ textarea {
     border: 1px solid $border-cr;
   }
 }
-// [type="tel"] {
-//   max-width: rem(200);
-//   width: 100%;
-// }
-// button,
-// [type="button"],
-// [type="submit"] {
-// 	/*↓リセットCSS */
-// 	margin: 0;
-// 	background-image: none;
-// 	width: auto;
-// 	display: inline-block;
-// 	text-decoration: none;
-// 	border: none;
-// 	border-radius: 0;
-// 	/*↓カスタム */
-// 	padding: $padding-und-btn $padding-lnr-btn;
-// 	background: $back-cr-btn;
-// 	color: $font-cr-btn;
-// 	font-size: $fz-btn;
-// 	cursor: pointer;
-// 	transition: 0.3s ease;
-//   border-radius: $border-r-btn;
-//   line-height: 1;
-// }
 
 [type="radio"] {
   display: none;
@@ -117,6 +92,9 @@ textarea {
     font-size: $radio-fz;
     line-height: 1;
     cursor: pointer;
+    @include mq("md") {
+      font-size: rem(17);
+    }
 
     &::before {
       position: absolute;
@@ -215,20 +193,18 @@ select {
   color: inherit;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 65%;
   /*↓カスタム */
-  // margin-top: rem(32);
   font-size: $fz;
   padding: $padding-und $padding-lnr;
   background-color: $back-cr;
   border: 1px solid $border-cr-default;
   border-radius: $border-r;
   /*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
-  appearance: auto;
-  /*↓デフォルトではないアイコンを使う場合は入力する*/
-  // background-image: url();
-  // background-position: right 12px center;
-  // background-repeat: no-repeat;
+  appearance: none;
+  @include mq("md") {
+    width: 41%;
+  }
   &:focus {
     border: 1px solid $border-cr;
   }
@@ -238,10 +214,6 @@ select {
   position: relative;
   /*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
   appearance: auto;
-  /*↓デフォルトではないアイコンを使う場合は入力する*/
-  // background-image: url();
-  // background-position: right 12px center;
-  // background-repeat: no-repeat;
   &:focus {
     border: 1px solid $border-cr;
   }
@@ -254,32 +226,29 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 100%;
 }
 
-// textarea {
-// 	height: $textarea-height;
-//   width: 100%;
-//   max-width: rem(600);
-// }
-
 .form dl {
+  font-size: rem(14);
   @include mq("md") {
     display: flex;
-    // max-width: rem(704);
     width: 100%;
     gap: 2.2%;
+    font-size: rem(15);
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .form dt {
-  margin-top: rem(32);
+  margin-top: rem(20);
   @include mq("md") {
     width: 14%;
-    margin-top: rem(26);
     text-align: right;
+    margin-top: rem(32);
   }
 }
 
 .form dd {
-  margin-top: rem(8);
+  margin-top: rem(10);
   @include mq("md") {
     margin-top: rem(26);
     width: 83.8%;
@@ -290,11 +259,64 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #a6a6a6;
 }
 
+/* ラジオボタン
+***************************************************************/
+.form__radio dt {
+  margin-top: 0;
+}
+
+.form__radio dd {
+  @include mq("md") {
+    margin-top: rem(33);
+  }
+}
+
+.form__radio [type="radio"] + span {
+  @include mq("md") {
+    padding-left: rem(45);
+    margin-right: rem(62);
+  }
+}
+
+.form__radio [type="radio"] + span::before {
+  @include mq("md") {
+    width: rem(26);
+    height: rem(26);
+  }
+}
+
+.form__radio [type="radio"]:checked + span::after {
+  @include mq("md") {
+    height: rem(17);
+    left: rem(5);
+    width: rem(17);
+  }
+}
+
 /* 名前
 ***************************************************************/
 .form__name {
   @include mq("md") {
     display: flex;
+    gap: 1%;
+  }
+}
+
+.form__name dl {
+  @include mq("md") {
+    gap: 5%;
+  }
+}
+
+.form__name dt {
+  @include mq("md") {
+    width: 28%;
+  }
+}
+
+.form__name dd {
+  @include mq("md") {
+    width: 68%;
   }
 }
 
@@ -307,20 +329,78 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .form__post-code [type="text"] {
   width: 46.6%;
+  @include mq("md") {
+    width: 41%;
+  }
 }
 
 .form__post-code button {
   width: 41.8%;
 }
 
+/* セレクトボックス
+***************************************************************/
+.form__select {
+  position: relative;
+}
+.form__select::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: $blue transparent transparent transparent;
+  position: absolute;
+  top: 50%;
+  right: 40.5%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  @include mq("md") {
+    right: 61.4%;
+  }
+}
+
 /* 説明会
 ***************************************************************/
+.form .form__info-session {
+  @include mq("md") {
+    align-items: flex-start;
+  }
+}
+
 .form__info-session label {
   display: block;
   margin-top: rem(13);
   @include mq("md") {
     margin-top: 0;
     display: inline-block;
+  }
+}
+
+.form__info-session [type="checkbox"] + span {
+  @include mq("md") {
+    padding-left: rem(36);
+    font-size: rem(17);
+    margin-right: 0;
+  }
+}
+
+.form__info-session dd label:not(:first-child) {
+  @include mq("md") {
+    margin-left: rem(58);
+  }
+}
+
+.form__info-session [type="checkbox"] + span::before {
+  @include mq("md") {
+    height: rem(24);
+    width: rem(24);
+  }
+}
+
+.form__info-session [type="checkbox"]:checked + span::after {
+  @include mq("md") {
+    left: rem(2);
   }
 }
 
@@ -334,6 +414,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: block;
   @include mq("md") {
     margin-top: rem(20);
+    letter-spacing: 0.16em;
   }
 }
 
@@ -358,18 +439,34 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.form__mail [type="checkbox"] + span {
+  font-size: rem(12);
+  margin: 0;
+  padding-left: rem(26);
+  @include mq("md") {
+    font-size: rem(14);
+    padding-left: rem(40);
+  }
+}
+
+// チェック
 .form__mail [type="checkbox"] + span::before {
   background: #b6b6b6;
   border: none;
-  border-radius: 0.1875rem;
   content: "";
   display: block;
-  height: 1.25rem;
-  left: 0;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 0;
+  height: 1.25rem;
   width: 1.25rem;
+  border-radius: rem(2);
+  transform: translateY(-50%);
+  @include mq("md") {
+    height: rem(26);
+    width: rem(26);
+    border-radius: rem(4);
+  }
 }
 
 .form__mail [type="checkbox"]:checked + span::after {
@@ -384,6 +481,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 1;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-55deg);
   width: 12px;
+  @include mq("md") {
+    height: 9px;
+    left: 5px;
+    transform: translateY(-50%) rotate(-52deg);
+    width: 15px;
+  }
 }

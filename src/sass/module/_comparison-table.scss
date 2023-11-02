@@ -19,16 +19,35 @@ table , td, th {
   text-align: center;
   line-height: calc(19 / 15);
   letter-spacing: .019em;
+  @include mq("md") {
+    font-size: rem(16);
+  }
 }
 
 .comparison-table__back {
+  position: sticky;
+  left: 0;
   width: 8%;
   padding-left: rem(13);
   text-align: left;
   color: $white;
   background: $indigo;
   font-size: rem(13);
-  border-bottom: 1px solid $white;
+  @include mq("md") {
+    font-size: rem(15);
+    padding-left: rem(9);
+  }
+}
+
+.comparison-table__sticky::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 48%;
+  transform: translateX(-50%);
+  width: 103%;
+  height: 1px;
+  background-color: $white;
 }
 
 th.comparison-table__back1 {
@@ -36,6 +55,9 @@ th.comparison-table__back1 {
   background: $blue;
   font-weight: $bold;
   width: 22.9%;
+  @include mq("md") {
+    font-size: rem(18);
+  }
 }
 
 th.comparison-table__back2  {
@@ -51,6 +73,9 @@ th.comparison-table__back2  {
   font-size: rem(15);
   font-weight: $bold;
   text-align: center;
+  @include mq("md") {
+    font-size: rem(17);
+  }
 }
 
 .comparison-table__horizontal th {

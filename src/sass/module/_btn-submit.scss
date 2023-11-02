@@ -1,44 +1,60 @@
 @use "global" as *;
 
-
-input[type=submit] {
+input[type="submit"] {
   cursor: pointer;
   color: $white;
+  @include mq("md") {
+    font-size: rem(18);
+  }
 }
 
 .btn-submit {
   position: relative;
   display: inline-block;
-  padding: 1em 2em;
-  line-height: 1;
+  padding: rem(13) 0.5em;
+  max-width: rem(222);
+  width: 100%;
+  white-space: normal;
+  line-height: 1.2;
   background-color: $blue;
   text-decoration: none;
   border-radius: rem(35);
-  transition: .3s opacity;
+  transition: 0.3s opacity;
+  @include mq("md") {
+    padding: rem(20) 0.5em;
+    max-width: rem(300);
+    padding-right: rem(25);
   }
+}
 
-  .btn-submit:hover{
-  opacity: .7;
-  }
+.btn-submit:hover {
+  opacity: 0.7;
+}
 
-  
-  .btn-submit::before,
-  .btn-submit::after {
-    content: ""; /* 疑似要素に指定必須 */
-    width: 20px; /* 線の長さを指定 */
-    height: 3px; /* 線の幅を指定 */
-    display: inline-block; /* インラインブロックにする */
-    border-radius: 2px; /* 線を角丸にする */
-    background: $white;   /* 線の色を指定 */
-    position: absolute; /* 相対位置に指定 */
-    right: 10px; /* 右から10pxの位置に配置 */
+.btn-submit::before,
+.btn-submit::after {
+  content: ""; /* 疑似要素に指定必須 */
+  width: rem(3); /* 線の長さを指定 */
+  height: rem(11); /* 線の幅を指定 */
+  display: inline-block; /* インラインブロックにする */
+  border-radius: 2px; /* 線を角丸にする */
+  background: $white; /* 線の色を指定 */
+  position: absolute; /* 相対位置に指定 */
+  right: rem(23); /* 右から10pxの位置に配置 */
+
+  height: 11px;
+  right: 23px;
+  width: 3px;
+  @include mq("md") {
+    right: 15%;
   }
-  
-  .btn-submit::before {
-    top: calc(50% - 8px);     /* 数値は微調整してください */
-    transform: rotate(45deg); /* 45度回転させる */
-  }
-  .btn-submit::after {
-    bottom: calc(50% - 8px);   /* 数値は微調整してください */
-    transform: rotate(-45deg); /* -45度回転させる */
-  }
+}
+
+.btn-submit::before {
+  top: calc(50% - 9px); /* 数値は微調整してください */
+  transform: rotate(-45deg); /* -45度回転させる */
+}
+.btn-submit::after {
+  bottom: calc(50% - 8px); /* 数値は微調整してください */
+  transform: rotate(45deg); /* 45度回転させる */
+}
